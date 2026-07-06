@@ -5,13 +5,21 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+  - The system has 5 classes which allows the owner add their details and pets, add tasks and generate a daily plan based on taks and constraints. The classes are: Owner, Pet, Task, Scheduler, and DailyPlan. 
+
 - What classes did you include, and what responsibilities did you assign to each?
+  - **Owner**: stores their details, their available time and general preferences.
+  - **Pet**: stores metatdata about the pet, such as name, type, and age.
+  - **Task**: stores the task details, such as name, duration, recurrence, priority and notes.
+  - **Scheduler**: takes the owner, pet, and tasks as input and generates a daily plan based on constraints and priorities.
+  - **DailyPlan**: represents the final scheduled plan, including time slots, total minutes used, and reasoning.
 
 **b. Design changes**
 
 - Did your design change during implementation?
+  - Yes
 - If yes, describe at least one change and why you made it.
-
+  - There a was slight mismatch between the UML and the system design. 
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
