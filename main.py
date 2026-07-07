@@ -36,6 +36,16 @@ def print_schedule(owner: Owner, pets: list[Pet], plan) -> None:
     if has_bg:
         print("\n  [bg] = runs in background, no owner needed")
 
+    if plan.unscheduled:
+        print("\n  Not scheduled today (ran out of owner time):")
+        for pet, task in plan.unscheduled:
+            print(f"    - {task.title} ({pet.name})")
+
+    if plan.missed_anchors:
+        print("\n  Missed preferred time:")
+        for pet, task in plan.missed_anchors:
+            print(f"    - {task.title} ({pet.name}) wanted {_to_12h(task.preferred_time)}")
+
     print("\n" + "=" * WIDTH)
     print(f"  Total Pets:  {len(pets)}")
     print(f"  Total Tasks: {len(slots)}")
